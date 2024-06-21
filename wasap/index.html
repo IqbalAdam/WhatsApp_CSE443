@@ -16,10 +16,25 @@
             background-color: #555;
         }
         h1 {
+            display: flex;
+            align-items: center;
             background-color: #4CAF50;
             color: white;
             padding: 15px;
             margin: 0;
+            text-align: left;
+        }
+        h1 img {
+            height: 40px;
+        }
+
+        h2 {
+            font-size: 1.3em;
+            font-weight: bold;
+            color: #FFF;
+        }
+        #groupName {
+            flex-grow: 1;
             text-align: center;
         }
         #chatbox {
@@ -94,7 +109,13 @@
     </style>
 </head>
 <body>
-    <h1>WhatsUp</h1>
+    <h1>
+        <img src="images/whatsapp-logo.png" alt="WhatsApp Logo">
+        <span>WhatsApp</span>
+    </h1>
+    <h2>
+        <div id="groupName">CSE443 Assignment 2 - Group 2</div>
+    </h2>
     <div id="chatbox"></div>
     <form id="chatForm">
         <select id="userSelect">
@@ -104,7 +125,7 @@
         </select>
         <input type="text" id="message" placeholder="Type your message..." required>
         <button type="submit">
-            <img src="send.png" alt="Send">
+            <img src="images/send.png" alt="Send">
         </button>
     </form>
     <script>
@@ -113,8 +134,8 @@
         // Mapping of usernames to display names
         const usernameMapping = {
             user1: 'Me',
-            user2: 'User 2',
-            user3: 'User 3'
+            user2: 'Group Member 2',
+            user3: 'Group Member 3'
         };
 
         async function fetchMessages() {
